@@ -21,6 +21,9 @@ var letterConversion = {
 	"J": 9
 }
 
+
+var letterArray = ["A","B","C","D","E","F","G","H","I","J"]
+
 // makes the grid columns and rows
 for (i = 0; i < cols; i++) {
 	for (j = 0; j < rows; j++) {
@@ -34,6 +37,9 @@ for (i = 0; i < cols; i++) {
 		square.className = "boardSquare";
 
 		// THIS IS WHERE YOU WILL ADD CODE FOR PART 1 TO ADD TEXT TO EACH SQUARE
+
+
+		square.textContent = letterArray[j] + (i + 1);
 
 		// set each grid square's coordinates: multiples of the current row or column number
 		var topPosition = j * squareSize;
@@ -59,8 +65,33 @@ var gameBoard = [
 				[1,0,0,0,0,0,0,0,0,0]
 				]
 
-function fireTorpedo() {
+				                                var row;
+				                                var x;
+				                                var column;
+				                                var torpedo;
+				                                var first;
+				                                var second;
+				                                var converted;
+				                                var hitHolder = 0;
 
-	// Your game logic will go here!
 
-}
+
+				                                function fireTorpedo() {
+
+				                                torpedo = document.getElementById("fireInput").value;
+				                                    x = torpedo.substring(0, 1);
+				                                        row = letterConversion[x];
+				                                column = torpedo.substring(1, 3);
+
+				                if (gameBoard[row][column - 1] == 1){
+
+				                        document.getElementById("s" + row + (column - 1)).style.background =  "red";
+
+				                    }
+				                    else {
+
+				                            document.getElementById("s" + row + (column - 1)).style.background = "grey";
+
+				                    }
+				                    var userInput = $("fireInput").val();
+				                }
