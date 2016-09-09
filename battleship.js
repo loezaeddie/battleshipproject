@@ -3,6 +3,8 @@ var rows = 10;
 var cols = 10;
 var squareSize = 50;
 
+var  hitcounter= 1;
+
 // gets the container element
 var gameBoardContainer = document.getElementById("gameboard");
 
@@ -86,7 +88,7 @@ var gameBoard = [
 				                if (gameBoard[row][column - 1] == 1){
 
 				                        document.getElementById("s" + row + (column - 1)).style.background =  "red";
-
+																hitcounter++;
 				                    }
 				                    else {
 
@@ -94,4 +96,15 @@ var gameBoard = [
 
 				                    }
 				                    var userInput = $("fireInput").val();
+
+
+															if (hitcounter == 17) {
+																console.log("destroyed");
+															}
+
+
+
+
+
+
 				                }
